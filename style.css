@@ -1,0 +1,19 @@
+.container {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.adjust-grid-size {
+  font-size: 30px;
+  margin: 20px auto 40px;
+  display: block;
+}
