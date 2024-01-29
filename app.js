@@ -10,8 +10,16 @@ function createGrid(gridSize) {
     cell.style.width = cellWidthHeight + "px";
     cell.style.height = cellWidthHeight + "px";
     container.appendChild(cell);
+    cell.addEventListener("mousedown", () => {
+      isMouseDown = true;
+    });
+    cell.addEventListener("mouseup", () => {
+      isMouseDown = false;
+    });
     cell.addEventListener("mouseover", () => {
-      cell.style.backgroundColor = "black";
+      if (isMouseDown) {
+        cell.style.backgroundColor = "black";
+      }
     });
   }
 }
