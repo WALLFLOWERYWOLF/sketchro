@@ -1,4 +1,6 @@
 const container = document.querySelector(".container");
+let isMouseDown;
+let isMouseOver;
 
 function createGrid(gridSize) {
   container.innerHTML = "";
@@ -10,17 +12,26 @@ function createGrid(gridSize) {
     cell.style.width = cellWidthHeight + "px";
     cell.style.height = cellWidthHeight + "px";
     container.appendChild(cell);
+
+    cell.addEventListener("mouseover", () => {
+      isMouseOver = true;
+      handleCellColor(cell);
+    });
+
     cell.addEventListener("mousedown", () => {
       isMouseDown = true;
+      handleCellColor(cell);
     });
+
     cell.addEventListener("mouseup", () => {
       isMouseDown = false;
     });
-    cell.addEventListener("mouseover", () => {
-      if (isMouseDown) {
-        cell.style.backgroundColor = "black";
-      }
-    });
+  }
+}
+
+function handleCellColor(cell) {
+  if (isMouseDown && isMouseOver) {
+    cell.style.backgroundColor = "black";
   }
 }
 
