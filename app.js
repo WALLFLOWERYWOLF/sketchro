@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const clearbtn = document.querySelector(".clear");
 let isMouseDown;
 let isMouseOver;
 
@@ -35,6 +36,13 @@ function handleCellColor(cell) {
   }
 }
 
+function clear() {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.style.backgroundColor = "white";
+  });
+}
+
 createGrid(16);
 
 const btn = document.querySelector(".adjust-grid-size");
@@ -48,4 +56,8 @@ btn.addEventListener("click", () => {
       "Not a valid number! Please try again and enter a valid number from 1 to 100."
     );
   }
+});
+
+clearbtn.addEventListener("click", () => {
+  clear();
 });

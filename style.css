@@ -12,8 +12,19 @@
   border: 1px solid black;
 }
 
-.adjust-grid-size {
+body {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.buttonsandsliders {
+  display: flex;
+  justify-content: center;
+}
+
+.adjust-grid-size,
+.clear {
   font-size: 30px;
   margin: 20px auto 40px;
-  display: block;
 }
