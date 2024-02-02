@@ -53,7 +53,7 @@ btn.addEventListener("click", () => {
     createGrid(gridSize);
   } else {
     alert(
-      "Not a valid number! Please try again and enter a valid number from 1 to 100."
+      "Please try again and enter a valid number from 1 to 100."
     );
   }
 });
