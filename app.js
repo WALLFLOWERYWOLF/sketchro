@@ -6,9 +6,9 @@ const gridBorders = document.querySelector(".grid-borders");
 let isMouseDown;
 let isMouseOver;
 let modeSelected;
+let previousMode;
 let sketchColor = "rgba(0, 0, 0, 1)";
 let backgroundColor = "rgba(255, 255, 255, 1)";
-let previousMode;
 
 function createGrid(gridSize) {
   container.innerHTML = "";
@@ -45,6 +45,8 @@ function handleCellColor(cell) {
       cell.style.backgroundColor = rainbow();
     } else if (modeSelected === "gradual") {
       cell.style.backgroundColor = gradual(cell);
+    } else if (modeSelected === "eraser") {
+      cell.style.backgroundColor = eraser(cell);
     } else {
       cell.style.backgroundColor = sketchColor;
     }
@@ -53,9 +55,6 @@ function handleCellColor(cell) {
 
 function modeSelector(modeSelected) {
   switch (modeSelected) {
-    case "eraser":
-      eraser();
-      break;
     case "color":
       sketchColorSelector();
       break;
@@ -66,8 +65,8 @@ function modeSelector(modeSelected) {
 }
 
 function eraser(cell) {
-  sketchColor = backgroundColor;
   cell.dataset.increment = 0;
+  return backgroundColor;
 } 
 
 function clear() {
