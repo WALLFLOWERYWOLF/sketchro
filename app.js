@@ -5,7 +5,7 @@ const modeSelectorButtons = document.querySelectorAll(".modeSelectorButton");
 const gridBorders = document.querySelector(".grid-borders");
 let isMouseDown;
 let isMouseOver;
-let modeSelected;
+let modeSelected = "pencil";
 let previousMode;
 let sketchColor = "rgba(0, 0, 0, 1)";
 let backgroundColor = "rgba(255, 255, 255, 1)";
@@ -47,7 +47,7 @@ function handleCellColor(cell) {
       cell.style.backgroundColor = gradual(cell);
     } else if (modeSelected === "eraser") {
       cell.style.backgroundColor = eraser(cell);
-    } else {
+    } else if (modeSelected === "pencil") {
       cell.style.backgroundColor = sketchColor;
     }
   }
@@ -94,6 +94,7 @@ function sketchColorSelector () {
   let newSketchColor = prompt("Enter a Sketch Color");
   if (newSketchColor !== "" && newSketchColor !== null) {
     sketchColor = newSketchColor;
+    modeSelected = previousMode;
   } else {
     modeSelected = previousMode;
   }
