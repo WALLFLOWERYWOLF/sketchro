@@ -3,7 +3,6 @@
   height: 750px;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
   border: 5px solid #7f00ff;
   border-radius: 5px;
 }
