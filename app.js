@@ -84,6 +84,7 @@ function backgroundColorSelector () {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
       cell.style.backgroundColor = backgroundColor;
+      modeSelected = previousMode;
   });
   } else {
     modeSelected = previousMode;
