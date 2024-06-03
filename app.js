@@ -13,7 +13,7 @@ let backgroundColor = "rgba(255, 255, 255, 1)";
 function createGrid(gridSize) {
   container.innerHTML = "";
   let numberOfCells = gridSize * gridSize;
-  let cellWidthHeight = 750 / gridSize;
+  let cellWidthHeight = 800 / gridSize;
   for (let i = 1; i <= numberOfCells; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
